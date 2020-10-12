@@ -38,6 +38,8 @@
 				"${workspaceFolder}/client/*/*.cpp",
 				"-o",
 				"${workspaceFolder}/client/backclient",
+				"-I",
+				"${workspaceFolder}/backcomms",
 				"-lbackcomms",
 				"-lSDL2"
 			],
