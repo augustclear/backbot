@@ -53,50 +53,6 @@
 				"kind": "build",
 				"isDefault": true
 			},
-		},
-		{
-			"type": "shell",
-			"label": "Build backcomms objs",
-			"command": "/usr/bin/g++",
-			"args": [
-				"-g",
-				"-c",
-				"-Wall",
-				"-Werror",
-				"-fpic",
-				"${workspaceFolder}/backcomms/*.cpp",
-			],
-			"options": {
-				"cwd": "${workspaceFolder}/backcomms/lib"
-			},
-			"problemMatcher": [
-				"$gcc"
-			]
-		},
-		{
-			"type": "shell",
-			"label": "Build backcomms",
-			"command": "/usr/bin/g++",
-			"args": [
-				"-shared",
-				"-o",
-				"libbackcomms.so",
-				"${workspaceFolder}/backcomms/lib/*.o",
-			],
-			"options": {
-				"cwd": "${workspaceFolder}/backcomms/lib"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"dependsOrder": "sequence",
-			"dependsOn": [
-				"Build backcomms objs"
-			]
 		}
 	]
 }
