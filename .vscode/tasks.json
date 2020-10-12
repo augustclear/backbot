@@ -7,14 +7,14 @@
 			"command": "/usr/bin/g++",
 			"args": [
 				"-g",
-				"-L${workspaceFolder}/backcomms/lib/",
-				"-Wl,-rpath=${workspaceFolder}/backcomms/lib/",
+				"-L${workspaceFolder}/lib/",
+				"-Wl,-rpath=${workspaceFolder}/lib/",
 				"${workspaceFolder}/bot/*/*.cpp",
 				"-o",
 				"${workspaceFolder}/bot/backbot",
 				"-I",
-				"${workspaceFolder}/backcomms",
-				"-lbackcomms"
+				"${workspaceFolder}/include",
+				"-lcComms"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"
@@ -33,14 +33,14 @@
 			"command": "/usr/bin/g++",
 			"args": [
 				"-g",
-				"-L${workspaceFolder}/backcomms/lib/",
-				"-Wl,-rpath=${workspaceFolder}/backcomms/lib/",
+				"-L${workspaceFolder}/lib/",
+				"-Wl,-rpath=${workspaceFolder}/lib",
 				"${workspaceFolder}/client/*/*.cpp",
 				"-o",
 				"${workspaceFolder}/client/backclient",
 				"-I",
-				"${workspaceFolder}/backcomms",
-				"-lbackcomms",
+				"${workspaceFolder}/include",
+				"-lcComms",
 				"-lSDL2"
 			],
 			"options": {
@@ -52,7 +52,7 @@
 			"group": {
 				"kind": "build",
 				"isDefault": true
-			},
+			}
 		}
 	]
 }
