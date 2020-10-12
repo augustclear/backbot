@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Server.hpp"
-#include "Client.hpp"
+#include "cComms/Server.hpp"
+#include "cComms/Client.hpp"
 #include "BotState.hpp"
 
 using namespace std;
