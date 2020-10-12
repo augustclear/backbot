@@ -1,0 +1,100 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "C/C++: Build Bot Code",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"-L${workspaceFolder}/backcomms/lib/",
+				"-Wl,-rpath=${workspaceFolder}/backcomms/lib/",
+				"${workspaceFolder}/bot/*/*.cpp",
+				"-o",
+				"${workspaceFolder}/bot/backbot",
+				"-I",
+				"${workspaceFolder}/backcomms",
+				"-lbackcomms"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		},
+		{
+			"type": "shell",
+			"label": "C/C++: Build Client App Code",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"-L${workspaceFolder}/backcomms/lib/",
+				"-Wl,-rpath=${workspaceFolder}/backcomms/lib/",
+				"${workspaceFolder}/client/*/*.cpp",
+				"-o",
+				"${workspaceFolder}/client/backclient",
+				"-lbackcomms",
+				"-lSDL2"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+		},
+		{
+			"type": "shell",
+			"label": "Build backcomms objs",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-g",
+				"-c",
+				"-Wall",
+				"-Werror",
+				"-fpic",
+				"${workspaceFolder}/backcomms/*.cpp",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/backcomms/lib"
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"type": "shell",
+			"label": "Build backcomms",
+			"command": "/usr/bin/g++",
+			"args": [
+				"-shared",
+				"-o",
+				"libbackcomms.so",
+				"${workspaceFolder}/backcomms/lib/*.o",
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/backcomms/lib"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Build backcomms objs"
+			]
+		}
+	]
+}
