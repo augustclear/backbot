@@ -26,33 +26,6 @@
 				"kind": "build",
 				"isDefault": true
 			},
-		},
-		{
-			"type": "shell",
-			"label": "C/C++: Build Client App Code",
-			"command": "/usr/bin/g++",
-			"args": [
-				"-g",
-				"-L${workspaceFolder}/lib/",
-				"-Wl,-rpath=${workspaceFolder}/lib",
-				"${workspaceFolder}/client/*/*.cpp",
-				"-o",
-				"${workspaceFolder}/client/backclient",
-				"-I",
-				"${workspaceFolder}/include",
-				"-lcComms",
-				"-lSDL2"
-			],
-			"options": {
-				"cwd": "${workspaceFolder}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
 		}
 	]
 }

@@ -24,27 +24,6 @@
             ],
             "preLaunchTask": "C/C++: Build Bot Code",
             "miDebuggerPath": "/usr/bin/gdb"
-        },
-        {
-            "name": "Build and Debug Client Code",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/client/backclient",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "C/C++: Build Client App Code",
-            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }
